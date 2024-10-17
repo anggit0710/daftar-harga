@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar harga paket internet ,paket kvision, pulsa dan token listrik</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Daftar Harga</h1>
+
+        <!-- Dropdown untuk memilih jenis layanan -->
+        <label for="service">Pilih Produk:</label>
+        <select id="service" name="service" onchange="toggleProvider()">
+            <option value="internet" selected>Paket Internet</option>
+            <option value="pulsa">Pulsa</option>
+            <option value="kvision">KVision</option>
+            <option value="listrik">Token Listrik</option>
+        </select>
+
+        <!-- Dropdown untuk memilih provider, hanya muncul untuk layanan internet dan pulsa -->
+        <div id="provider-container" style="display: block;">
+            <label for="provider">Pilih Provider:</label>
+            <select id="provider" name="provider" onchange="updatePrices()">
+                <option value="axis">Axis</option>
+                <option value="xl">XL</option>
+                <option value="indosat">Indosat</option>
+                <option value="tri">Tri</option>
+                <option value="telkomsel">Telkomsel</option>
+                <option value="byu">by.U</option>
+            </select>
+        </div>
+
+        <!-- Tabel untuk Paket Internet -->
+        <table id="internet-table" style="display: table;">
+            <thead>
+                <tr>
+                    <th>Kuota</th>
+                    <th>Harga</th>
+                </tr>
+            </thead>
+            <tbody id="internet-body">
+                <tr onclick="showDescription('AXIS 1,5 GB berlaku selama 1 hari')">
+                    <td id="package-1">AXIS 1,5 GB (1 hari)</td>
+                    <td id="price-1">Rp 7.000</td>
+                </tr>
+                <tr onclick="showDescription('AXIS 2 GB berlaku selama 3 hari')">
+                    <td id="package-2">AXIS 2 GB (3 hari)</td>
+                    <td id="price-2">Rp 11.000</td>
+                </tr>
+                <tr onclick="showDescription('AXIS 2,5 GB berlaku selama 5 hari')">
+                    <td id="package-3">AXIS 2,5 GB (5 hari)</td>
+                    <td id="price-3">Rp 14.000</td>
+                </tr>
+                <tr onclick="showDescription('AXIS 5 GB berlaku selama 7 hari')">
+                    <td id="package-4">AXIS 5 GB (7 hari)</td>
+                    <td id="price-4">Rp 25.000</td>
+                </tr>
+                <tr onclick="showDescription('AXIS 15 GB berlaku selama 7 hari')">
+                    <td id="package-5">AXIS 15 GB (7 hari)</td>
+                    <td id="price-5">Rp 44.000</td>
+                </tr>
+                <tr onclick="showDescription('AXIS 4 GB berlaku selama 15 hari')">
+                    <td id="package-6">AXIS 4 GB (15 hari)</td>
+                    <td id="price-6">Rp 30.000</td>
+                </tr>
+                <tr onclick="showDescription('AXIS 8 GB berlaku selama 15 hari')">
+                    <td id="package-7">AXIS 8 GB (15 hari)</td>
+                    <td id="price-7">Rp 45.000</td>
+                </tr>
+                <tr onclick="showDescription('AXIS 3 GB berlaku selama 30 hari')">
+                    <td id="package-8">AXIS 3 GB (30 hari)</td>
+                    <td id="price-8">Rp 20.000</td>
+                </tr>
+                <tr onclick="showDescription('AXIS 6 GB berlaku selama 30 hari')">
+                    <td id="package-9">AXIS 6 GB (30 hari)</td>
+                    <td id="price-9">Rp 33.000</td>
+                </tr>
+                <tr onclick="showDescription('AXIS 8 GB berlaku selama 30 hari')">
+                    <td id="package-10">AXIS 8 GB (30 hari)</td>
+                    <td id="price-10">Rp 43.000</td>
+                </tr>
+                <tr onclick="showDescription('AXIS 14 GB berlaku selama 30 hari')">
+                    <td id="package-11">AXIS 14 GB (30 hari)</td>
+                    <td id="price-11">Rp 60.000</td>
+                </tr>
+                <tr onclick="showDescription('AXIS 20 GB berlaku selama 30 hari')">
+                    <td id="package-12">AXIS 20 GB (30 hari)</td>
+                    <td id="price-12">Rp 74.000</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Tabel untuk Pulsa -->
+        <table id="pulsa-table" style="display: none;">
+            <thead>
+                <tr>
+                    <th>Nominal Pulsa</th>
+                    <th>Harga</th>
+                </tr>
+            </thead>
+            <tbody>
+            	<tr onclick="showDescription('Pulsa Rp 5.000')">
+                    <td>Pulsa Rp 5.000</td>
+                    <td>Rp 7.000</td>
+                </tr>
+                <tr onclick="showDescription('Pulsa Rp 10.000')">
+                    <td>Pulsa Rp 10.000</td>
+                    <td>Rp 13.000</td>
+                </tr>
+             <tr onclick="showDescription('Pulsa Rp 15.000')">
+                    <td>Pulsa Rp 15.000</td>
+                    <td>Rp 18.000</td>
+                </tr>   
+                <tr onclick="showDescription('Pulsa Rp 20.000')">
+                    <td>Pulsa Rp 20.000</td>
+                    <td>Rp 23.000</td>
+                </tr>
+                <tr onclick="showDescription('Pulsa Rp 25.000')">
+                    <td>Pulsa Rp 25.000</td>
+                    <td>Rp 28.000</td>
+                </tr>
+                <tr onclick="showDescription('Pulsa Rp 30.000')">
+                    <td>Pulsa Rp 30.000</td>
+                    <td>Rp 33.000</td>
+                </tr>
+                <tr onclick="showDescription('Pulsa Rp 40.000')">
+                    <td>Pulsa Rp 40.000</td>
+                    <td>Rp 43.000</td>
+                </tr>
+                <tr onclick="showDescription('Pulsa Rp 50.000')">
+                    <td>Pulsa Rp 50.000</td>
+                    <td>Rp 53.000</td>
+                </tr>
+                <tr onclick="showDescription('Pulsa Rp 60.000')">
+                    <td>Pulsa Rp 60.000</td>
+                    <td>Rp 64.000</td>
+                </tr>
+                <tr onclick="showDescription('Pulsa Rp 70.000')">
+                    <td>Pulsa Rp 70.000</td>
+                    <td>Rp 74.000</td>
+                </tr>
+                <tr onclick="showDescription('Pulsa Rp 80.000')">
+                    <td>Pulsa Rp 80.000</td>
+                    <td>Rp 84.000</td>
+                </tr>
+                <tr onclick="showDescription('Pulsa Rp 90.000')">
+                    <td>Pulsa Rp 90.000</td>
+                    <td>Rp 94.000</td>
+                    <tr onclick="showDescription('Pulsa Rp 100.000')">
+                    <td>Pulsa Rp 100.000</td>
+                    <td>Rp 105.000</td>
+                </tr>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Tabel untuk Token Listrik -->
+        <table id="listrik-table" style="display: none;">
+            <thead>
+                <tr>
+                    <th>Nominal Token</th>
+                    <th>Harga</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr onclick="showDescription('Token Rp 5.000')">
+                    <td>Token Rp 5.000</td>
+                    <td>Rp 9.000</td>
+                </tr>
+                <tr onclick="showDescription('Token Rp 10.000')">
+                    <td>Token Rp 10.000</td>
+                    <td>Rp 14.000</td>
+                </tr>
+                <tr onclick="showDescription('Token Rp 15.000')">
+                    <td>Token Rp 15.000</td>
+                    <td>Rp 19.000</td>
+                </tr>
+                <tr onclick="showDescription('Token Rp 20.000')">
+                    <td>Token Rp 20.000</td>
+                    <td>Rp 23.000</td>
+                </tr>
+                <tr onclick="showDescription('Token Rp 50.000')">
+                    <td>Token Rp 50.000</td>
+                    <td>Rp 55.000</td>
+                </tr>
+                <tr onclick="showDescription('Token Rp 100.000')">
+                    <td>Token Rp 100.000</td>
+                    <td>Rp 105.000</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Tabel untuk Paket KVision -->
+        <table id="kvision-table" style="display: none;">
+            <thead>
+                <tr>
+                    <th>Paket KVision</th>
+                    <th>Harga</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr onclick="showDescription('paket cling Berlaku selama 30 hari')">
+                    <td>Paket cling</td>
+                    <td>Rp 23.000</td>
+                </tr>
+                <tr onclick="showDescription('paket cling Berlaku selama 3 bulan')">
+                    <td>Paket cling 3bln</td>
+                    <td>Rp 63.000</td>
+                </tr>
+                <tr onclick="showDescription('paket Bein sport Berlaku selama 30 hari')">
+                    <td>Paket Beinsport</td>
+                    <td>Rp 54.000</td>
+                </tr>
+                <tr onclick="showDescription('Paket Gila bola berlaku selama 30 hari')">
+                    <td>Paket Gibol</td>
+                    <td>Rp 54.000</td>
+                </tr>
+                <tr onclick="showDescription('Paket Bri liga 1 Berlaku selama 30 hari')">
+                    <td>Paket Liga 1 </td>
+                    <td>Rp 72.000</td>
+                </tr>
+                <tr onclick="showDescription('Paket Spotv berlaku selama 30 hari')">
+                    <td>Paket Spotv</td>
+                    <td>Rp 84.000</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Copyright -->
+    <footer>
+        <p>&copy; 2024 AP</p>
+    </footer>
+
+    <script>
+        const packages = {
+            axis: [
+                { name: "AXIS 1,5 GB (1 hari)", price: "Rp 7.000" },
+                { name: "AXIS 2 GB (3 hari)", price: "Rp 11.000" },
+                { name: "AXIS 2,5 GB (5 hari)", price: "Rp 14.000" },
+                { name: "AXIS 5 GB (7 hari)", price: "Rp 25.000" },
+                { name: "AXIS 15 GB (7 hari)", price: "Rp 44.000" },
+                { name: "AXIS 4 GB (15 hari)", price: "Rp 30.000" },
+                { name: "AXIS 8 GB (15 hari)", price: "Rp 45.000" },
+                { name: "AXIS 3 GB (30 hari)", price: "Rp 20.000" },
+                { name: "AXIS 6 GB (30 hari)", price: "Rp 33.000" },
+                { name: "AXIS 8 GB (30 hari)", price: "Rp 43.000" },
+                { name: "AXIS 14 GB (30 hari)", price: "Rp 60.000" },
+                { name: "AXIS 20 GB (30 hari)", price: "Rp 74.000" },
+            ],
+            xl: [
+                { name: "XL 2,5 GB (3 hari)", price: "Rp 13.000" },
+                { name: "XL 4,5 GB (3 hari)", price: "Rp 16.000" },
+                { name: "XL 5,5 GB (5 hari)", price: "Rp 20.000" },
+                { name: "XL 6,5 GB (7 hari)", price: "Rp 27.000" },
+                { name: "XL 12 GB (7 hari)", price: "Rp 34.000" },
+                { name: "XL 1,5 GB (10 hari)", price: "Rp 17.000" },
+                { name: "XL 3,5 GB (10 hari)", price: "Rp 23.000" },
+                { name: "XL 1,5 GB (30 hari)", price: "Rp 23.000" },
+                { name: "XL 3 GB (30 hari)", price: "Rp 36.000" },
+                { name: "XL 5 GB (30 hari)", price: "Rp 49.000" },
+                { name: "XL 6 GB (30 hari)", price: "Rp 53.000" },
+                { name: "XL 9 GB (30 hari)", price: "Rp 69.000" },
+                { name: "XL 11 GB (30 hari)", price: "Rp 79.000" },
+            ],
+            indosat: [
+                { name: "Indosat 1 GB (1 hari)", price: "Rp 7.000" },
+                { name: "Indosat 3 GB (3 hari)", price: "Rp 12.000" },
+                { name: "Indosat 2,5 GB (5 hari)", price: "Rp 16.000" },
+                { name: "Indosat 5,5 GB (5 hari)", price: "Rp 21.000" },
+                { name: "Indosat 7 GB (5 hari)", price: "Rp 24.000" },
+                { name: "Indosat 7 GB (7 hari)", price: "Rp 26.000" },
+                { name: "Indosat 3 GB (30 hari)", price: "Rp 23.000" },
+                { name: "Indosat  5,5 GB (30 hari)", price: "Rp 34.000" },
+                { name: "Indosat 9 GB (30 hari)", price: "Rp 45.000" },
+                { name: "Indosat 16 GB (30 hari)", price: "Rp 67.000" },
+                      { name: "Indosat 25 GB (30 hari)", price: "Rp 72.000" },
+            ],
+            tri: [
+                { name: "Tri 1,5 GB (1 hari)", price: "Rp 6.000" },
+                { name: "Tri 2,5 GB (1 hari)", price: "Rp 8.500" },
+                { name: "Tri 5 GB (1 hari)", price: "Rp 12.000" },
+                { name: "Tri 5 GB (3 hari)", price: "Rp 17.000" },
+                { name: "Tri 3 GB (30 hari)", price: "Rp 20.000" },
+                { name: "Tri 7 GB (30 hari)", price: "Rp 34.000" },
+                { name: "Tri  11 GB (30 hari)", price: "Rp 50.000" },
+                { name: "Tri 18 GB (30hari)", price: "Rp 62.000" },
+                { name: "Tri 42 GB (30 hari)", price: "Rp 92.000" },
+            ],
+            telkomsel: [
+           { name: "Telkomsel 1,5 GB (3 hari)", price: "Rp 10.000" },
+                { name: "Telkomsel 2 GB (3 hari)", price: "Rp 12.000" },
+                { name: "Telkomsel 2,5 GB (5 hari)", price: "Rp 14.000" },
+                { name: "Telkomsel 3 GB (5 hari)", price: "Rp 17.000" },
+                { name: "Telkomsel 4,5 GB (5 hari)", price: "Rp 23.000" },
+                { name: "Telkomsel 5,5 GB (5 hari)", price: "Rp 27.000" },
+                { name: "Telkomsel 7 GB (7 hari)", price: "Rp 29.000" },
+                { name: "Telkomsel 10 GB (10 hari)", price: "Rp 40.000" },
+            ],
+            byu: [
+                { name: "by.U 1 GB (1 hari)", price: "Rp 7.000" },
+                { name: "by.U 10 GB (1 hari)", price: "Rp 13.000" },
+                { name: "by.U 2 GB (3 hari)", price: "Rp 11.000" },
+                { name: "by.U 2,5 GB (5 hari)", price: "Rp 13.000" },
+                { name: "by.U 3 GB (7 hari)", price: "Rp 15.000" },
+                { name: "by.U 5 GB (7 hari)", price: "Rp 21.000" },
+               { name: "by.U unlimited 1,5 Mbps (7 hari)", price: "Rp 43.000" },         
+                { name: "by.U 1 GB (30 hari)", price: "Rp 13.000" },
+                { name: "by.U 3 GB (30 hari)", price: "Rp 18.000" },
+                { name: "by.U 6 GB (30 hari)", price: "Rp 33.000" },
+                { name: "by.U 12GB (30 hari)", price: "Rp 54.000" },
+            ],
+        };
+
+        function toggleProvider() {
+            const service = document.getElementById("service").value;
+            const providerContainer = document.getElementById("provider-container");
+            const internetTable = document.getElementById("internet-table");
+            const pulsaTable = document.getElementById("pulsa-table");
+            const listrikTable = document.getElementById("listrik-table");
+            const kvisionTable = document.getElementById("kvision-table");
+
+            if (service === "internet" || service === "pulsa") {
+                providerContainer.style.display = "block";
+                updatePrices();
+            } else {
+                providerContainer.style.display = "none";
+            }
+
+            internetTable.style.display = service === "internet" ? "table" : "none";
+            pulsaTable.style.display = service === "pulsa" ? "table" : "none";
+            listrikTable.style.display = service === "listrik" ? "table" : "none";
+            kvisionTable.style.display = service === "kvision" ? "table" : "none";
+        }
+
+        function updatePrices() {
+            const provider = document.getElementById("provider").value;
+            const packagesList = packages[provider];
+            const internetBody = document.getElementById("internet-body");
+
+            // Clear existing rows
+            internetBody.innerHTML = '';
+
+            // Populate new rows based on selected provider
+            packagesList.forEach((pkg, index) => {
+                const row = document.createElement('tr');
+                row.onclick = () => showDescription(pkg.name);
+                row.innerHTML = `
+                    <td id="package-${index + 1}">${pkg.name}</td>
+                    <td id="price-${index + 1}">${pkg.price}</td>
+                `;
+                internetBody.appendChild(row);
+            });
+        }
+
+        function showDescription(description) {
+            alert(description);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column; /* Atur elemen dalam kolom */
+    justify-content: space-between; /* Menjaga jarak antara konten dan footer */
+    min-height: 100vh;
+    padding: 20px; /* Menambahkan padding pada body */
+}
+
+.container {
+    flex: 1; /* Membiarkan container mengambil sisa ruang */
+    width: 100%;
+    max-width: 800px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+/* Gaya footer */
+footer {
+    text-align: center; /* Mengatur teks di tengah */
+    margin-top: 20px; /* Menambahkan jarak di atas footer */
+    padding: 10px 0; /* Menambahkan padding untuk memberikan ruang di dalam footer */
+    background-color: #fff; /* Opsional: memberikan latar belakang pada footer */
+    border-top: 1px solid #ddd; /* Opsional: garis batas di atas footer */
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.container:hover {
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #4CAF50;
+    font-size: 28px;
+}
+
+h2 {
+    margin-top: 20px;
+    color: #4CAF50;
+    font-size: 24px;
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 5px;
+}
+
+label {
+    margin-right: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px 0;
+    width: 100%;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+select:focus {
+    border-color: #4CAF50;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+thead {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    font-weight: bold;
+}
+
+tr:hover {
+    background-color: #e7f9e7; /* Warna latar belakang saat hover */
+    transition: background-color 0.3s ease;
+}
+
+td {
+    text-align: center;
+    font-weight: normal;
+}
+
+/* Responsif untuk mobile */
+@media only screen and (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    th, td {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
